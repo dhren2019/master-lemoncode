@@ -1,4 +1,6 @@
-p ::first-letter{
-    font-size: 350%;
-    font-weight: bold;
+p {
+    background-color: green;
+}
+div p {
+    background-color: chocolate;
 }
