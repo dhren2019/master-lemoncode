@@ -4,3 +4,7 @@ p {
 div p {
     background-color: chocolate;
 }
+
+div > p{
+    text-decoration-color: aquamarine;
+}
