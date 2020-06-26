@@ -1,0 +1,28 @@
+
+
+/* Css grid */
+
+.container{
+    margin: 2 em;
+    background-color: grey;
+    min-height: 50 vh;
+    display: grid;
+    grid-template-columns:  200px 30% auto;
+    grid-template-rows: 250% 100px auto;
+    
+}
+.item-a{
+    background-color: crimson;
+    grid-column: 1/4;
+    grid-row: 1/2;
+}
+.item-b{
+    background-color: orchid;
+    grid-column: 1/4;
+    grid-row: 2/3;
+}
+.item-c{
+    background-color: skyblue;
+    grid-column: 1/4;
+    grid-row: 3/4;
+}
