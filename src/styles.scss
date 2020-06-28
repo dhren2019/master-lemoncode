@@ -1,0 +1,34 @@
+$primary-color: darkorange;
+$secondary-color: skyblue;
+$text-color: darkblue;
+$font-base-size: 1.3 em;
+$link-font-size: 1.5 em;
+$color: darkred;
+
+//importar theme
+@if ($darktheme > 0) {
+    @import "dark-theme";
+}@else{
+    @import "light-theme";
+
+}
+.item {
+    .containera & {
+        font: {
+            size: $font-base-size;
+        }
+        background-color: $primary-color;
+        color: $text-color;
+    }
+
+    .containerb & {
+        background-color: $secondary-color;
+        color: $text-color;
+    }
+}
+
+a {
+    &:hover {
+        color: lighten($color, $amount: 10%)
+    }
+}
