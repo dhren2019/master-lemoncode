@@ -1,0 +1,47 @@
+.images-container {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
+}
+.images-container img {
+  width: 200px;
+  height: 200px;
+}
+
+.item-1:hover {
+  filter: brightness(0.2) sepia(0.1);
+}
+
+.item-2:hover {
+  filter: brightness(0.4) sepia(0.2);
+}
+
+.item-3:hover {
+  filter: brightness(0.6) sepia(0.3);
+}
+
+.item-4:hover {
+  filter: brightness(0.8) sepia(0.4);
+}
+
+.item-5:hover {
+  filter: brightness(1) sepia(0.5);
+}
+
+.item-6:hover {
+  filter: brightness(1.2) sepia(0.6);
+}
+
+.item-7:hover {
+  filter: brightness(1.4) sepia(0.7);
+}
+
+.item-8:hover {
+  filter: brightness(1.6) sepia(0.8);
+}
+
+.item-9:hover {
+  filter: brightness(1.8) sepia(0.9);
+}
+
+/*# sourceMappingURL=/styles.164d45a1.css.map */

@@ -1,34 +1,24 @@
-$primary-color: darkorange;
-$secondary-color: skyblue;
-$text-color: darkblue;
-$font-base-size: 1.3 em;
-$link-font-size: 1.5 em;
-$color: darkred;
-
-//importar theme
-@if ($darktheme > 0) {
-    @import "dark-theme";
-}@else{
-    @import "light-theme";
-
-}
-.item {
-    .containera & {
-        font: {
-            size: $font-base-size;
-        }
-        background-color: $primary-color;
-        color: $text-color;
-    }
-
-    .containerb & {
-        background-color: $secondary-color;
-        color: $text-color;
-    }
+@function filter-image($amount){
+    @return brightness($amount * 2 ) sepia($amount);
 }
 
-a {
-    &:hover {
-        color: lighten($color, $amount: 10%)
+.images-container{
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 200px);
+   
+    img{
+        width: 200px;
+        height: 200px;
+    
+  }
+}
+
+$i: 1;
+@while $i <= 9 {
+    .item-#{$i}:hover {
+       
+    filter: filter-image($i/10);
     }
+    $i: $i + 1;
 }
