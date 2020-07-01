@@ -1,0 +1,96 @@
+body {
+    // padding: 30px;
+    background-color:black;
+
+  .box {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    // display: grid;
+    // grid-row: repeat(5, 200px);
+    // grid-column: repeat(9, 200px);
+  
+    margin: 5px;
+    border: 3px solid white;
+ 
+    
+  }
+} 
+h1, h3{
+  font-family: 'Space Mono', monospace;
+  color: white;
+}
+
+
+.color-block-label {
+  padding: 0px 35px 10px 35px;
+  background-color: white;
+//    & font:{
+//     family: 'Space Mono', monospace;
+//     color: black;
+//   }
+}
+  
+  
+  $base: red;
+  $base-2:green;
+  $base-3:blue;
+  $saturation: 80%;
+  
+  $colores: (
+    primary: $base,
+    Complementarios: complement($base),
+     secondary: $base-2,
+    terciary:$base-3,
+    invert: invert($base-3)
+  );
+  $palettes: ();
+  @function palette($name, $tint: "base") {
+    @return map-get(map-get($palettes, $name), $tint);
+  }
+  
+  @each $name, $base in $colores {
+    $palettes: map-merge(
+      $palettes,
+      (
+        $name: (
+          lightest:
+            change-color($base, $lightness: 95%, $saturation: $saturation),
+          lighter: change-color($base, $lightness: 85%, $saturation: $saturation),
+          semilight:
+            change-color($base, $lightness: 75%, $saturation: $saturation),
+          light: change-color($base, $lightness: 65%, $saturation: $saturation),
+          base: change-color($base, $lightness: 50%, $saturation: $saturation),
+          dark: change-color($base, $lightness: 35%, $saturation: $saturation),
+          darker: change-color($base, $lightness: 20%, $saturation: $saturation),
+          darkest: change-color($base, $lightness: 10%, $saturation: $saturation)
+        )
+      )
+    );
+  
+    .#{$name}-lightest {
+      background-color: palette($name, lightest);
+      
+    }
+    .#{$name}-lighter {
+      background-color: palette($name, lighter);
+    }
+    .#{$name}-semilight {
+      background-color: palette($name, semilight);
+    }
+    .#{$name}-light {
+      background-color: palette($name, light);
+    }
+    .#{$name}-base {
+      background-color: palette($name);
+    }
+    .#{$name}-dark {
+      background-color: palette($name, dark);
+    }
+    .#{$name}-darker {
+      background-color: palette($name, darker);
+    }
+    .#{$name}-darkest {
+      background-color: palette($name, darkest);
+    }
+  }

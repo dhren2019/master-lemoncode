@@ -1,24 +1,67 @@
-@function filter-image($amount){
-    @return brightness($amount * 2 ) sepia($amount);
-}
+// @function filter-image($amount){
+//     @return brightness($amount * 2 ) sepia($amount);
+// }
 
-.images-container{
-    display: grid;
-    grid-template-columns: repeat(3, 200px);
-    grid-template-rows: repeat(3, 200px);
+// .images-container{
+//     display: grid;
+//     grid-template-columns: repeat(3, 200px);
+//     grid-template-rows: repeat(3, 200px);
    
-    img{
-        width: 200px;
-        height: 200px;
+//     img{
+//         width: 200px;
+//         height: 200px;
     
-  }
+//   }
+// }
+
+// $i: 1;
+// @while $i <= 9 {
+//     .item-#{$i}:hover {
+       
+//     filter: filter-image($i/10);
+//     }
+//     $i: $i + 1;
+// }
+$base-color-1: red;
+$base-color-2: green;
+$base-color-3: blue;
+@for $i from 1 through 3 {
+.container-#{$i}{
+    font: {
+    family: 'Space Mono', monospace;
+    size: 10 px;    
+}
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+.box {
+    
+    width: 100px;
+    height: 100px;
+    border-radius:8px;
+    margin:1rem;
+.color-box-text{
+justify-content: center;
+    }
+    }
+}
 }
 
-$i: 1;
-@while $i <= 9 {
-    .item-#{$i}:hover {
-       
-    filter: filter-image($i/10);
-    }
-    $i: $i + 1;
+.base-color-rojo{
+    background-color:$base-color-1;
+}
+
+.base-color-verde {
+    background-color: $base-color-2;
+}
+
+.base-color-azul{
+    
+    background-color: $base-color-3;
+}
+// @function brillo-imagen($amount){
+//     @return lighten($base-color-1, $amount*5);
+// }
+.lighten-1{
+    background-color: brillo-imagen();
 }
